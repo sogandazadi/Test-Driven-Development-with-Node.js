@@ -3,7 +3,10 @@ const todosRouter = require("./routes/todos")
 
 const app = experess();
 const port = 3000;
-app.use("/todos" , todosRouter)
+
+app.use(experess.json());
+app.use("/todos" , todosRouter);
+
 app.listen(port , ()=>{
     console.log(`App is running on port ${port}`)
 })
